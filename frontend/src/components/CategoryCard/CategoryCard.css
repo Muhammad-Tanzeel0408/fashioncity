@@ -1,0 +1,89 @@
+.category-card {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.category-image-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-image {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50%;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.shop-link {
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .shop-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Mobile: smaller category cards ── */
+@media (max-width: 768px) {
+    .category-image-wrapper {
+        aspect-ratio: 3/4;
+    }
+
+    .category-overlay {
+        padding: 10px;
+        height: 40%;
+    }
+
+    .category-title {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .shop-link {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-title {
+        font-size: 12px;
+    }
+}

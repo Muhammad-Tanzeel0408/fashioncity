@@ -1,0 +1,396 @@
+/* ========================================
+   Customer Reviews – Pezwaan-style Panel
+   Color: Dark Charcoal (#2d2d2d) + Gold (#c8922a)
+   ======================================== */
+
+.rv-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.rv-section-title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    color: #2d2d2d;
+}
+
+/* ---- Summary Panel ---- */
+.rv-summary {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 30px 40px;
+    margin-bottom: 25px;
+}
+
+.rv-summary-left {
+    text-align: center;
+    min-width: 140px;
+}
+
+.rv-avg-score {
+    font-size: 48px;
+    font-weight: 800;
+    color: #2d2d2d;
+    line-height: 1;
+}
+
+.rv-avg-label {
+    font-size: 13px;
+    color: #888;
+    margin: 4px 0 8px;
+}
+
+.rv-total-count {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+
+.rv-summary-right {
+    flex: 1;
+    max-width: 320px;
+}
+
+.rv-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.rv-bar-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    min-width: 36px;
+    text-align: right;
+}
+
+.rv-bar-track {
+    flex: 1;
+    height: 10px;
+    background: #e8e8e8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.rv-bar-fill {
+    height: 100%;
+    background: #c8922a;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+}
+
+.rv-bar-count {
+    font-size: 13px;
+    color: #888;
+    min-width: 22px;
+    text-align: left;
+}
+
+/* ---- Write Review Button ---- */
+.rv-write-toggle {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.rv-write-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 32px;
+    background: #2d2d2d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rv-write-btn:hover {
+    background: #444;
+}
+
+/* ---- Review Form ---- */
+.rv-form-container {
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 30px;
+    animation: rvSlideDown 0.3s ease;
+}
+
+@keyframes rvSlideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rv-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.rv-form-group {
+    margin-bottom: 18px;
+}
+
+.rv-form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rv-form-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+.rv-form-input:focus {
+    border-color: #c8922a;
+}
+
+.rv-form-textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+.rv-form-textarea:focus {
+    border-color: #c8922a;
+}
+
+.rv-submit-btn {
+    width: 100%;
+    padding: 13px;
+    background: #2d2d2d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rv-submit-btn:hover {
+    background: #444;
+}
+
+.rv-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ---- Image Upload ---- */
+.rv-image-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rv-image-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #d4d4d4;
+    border-radius: 8px;
+    background: #fff;
+    color: #888;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+    gap: 4px;
+}
+
+.rv-image-picker:hover {
+    border-color: #c8922a;
+    color: #c8922a;
+}
+
+.rv-image-picker span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.rv-image-preview {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+}
+
+.rv-image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rv-image-remove {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.rv-image-remove:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* ---- Review Card Image ---- */
+.rv-card-image {
+    margin-top: 12px;
+    max-width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+}
+
+.rv-card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---- Reviews List ---- */
+.rv-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.rv-card {
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.rv-card:last-child {
+    border-bottom: none;
+}
+
+.rv-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.rv-card-date {
+    font-size: 13px;
+    color: #999;
+}
+
+.rv-card-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.rv-card-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.rv-verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    color: #16a34a;
+    font-weight: 500;
+    background: #f0fdf4;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.rv-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin: 0 0 4px;
+}
+
+.rv-card-body {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.rv-loading,
+.rv-empty {
+    text-align: center;
+    color: #999;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .rv-summary {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .rv-summary-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .rv-form-container {
+        padding: 20px;
+    }
+
+    .rv-avg-score {
+        font-size: 38px;
+    }
+}

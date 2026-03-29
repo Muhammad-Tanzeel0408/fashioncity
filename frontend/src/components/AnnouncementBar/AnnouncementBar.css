@@ -1,0 +1,27 @@
+.announcement-bar {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.announcement-text {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
