@@ -41,7 +41,7 @@ const AdminLogin = () => {
                     <div className="form-group">
                         <label className="form-label">Email</label>
                         <input
-                            type="email"
+                            type="text"
                             className="form-input"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
