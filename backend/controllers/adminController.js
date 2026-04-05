@@ -28,7 +28,7 @@ const adminController = {
             const token = jwt.sign(
                 { id: admin.id, role: 'admin' },
                 process.env.JWT_SECRET,
-                { expiresIn: '30m' }
+                { expiresIn: '8h' }
             );
 
             const { password_hash, ...adminData } = admin;

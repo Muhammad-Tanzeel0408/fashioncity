@@ -22,6 +22,29 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
+// Add a response interceptor to handle token expiry
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response?.status === 401) {
+            const adminToken = sessionStorage.getItem('adminToken');
+            const userToken = localStorage.getItem('token');
+
+            // Handle admin token expiry
+            if (adminToken) {
+                sessionStorage.removeItem('adminToken');
+                window.location.href = '/admin/login?expired=true';
+            }
+            // Handle user token expiry
+            else if (userToken) {
+                localStorage.removeItem('token');
+                window.location.href = '/?expired=true';
+            }
+        }
+        return Promise.reject(error);
+    }
+);
+
 export const authService = {
     login: (credentials) => api.post('/users/login', credentials),
     register: (data) => api.post('/users/register', data),

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, Navigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { toast } from 'react-hot-toast';
 
 const AdminLogin = () => {
     const [email, setEmail] = useState('');
@@ -8,6 +9,14 @@ const AdminLogin = () => {
     const { adminLogin, isAdmin, loading: authLoading } = useAuth();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
+    const [searchParams] = useSearchParams();
+
+    // Show expiry notification
+    useEffect(() => {
+        if (searchParams.get('expired') === 'true') {
+            toast.error('Your admin session has expired. Please login again.');
+        }
+    }, [searchParams]);
 
     // Redirect to dashboard if already logged in as admin
     if (authLoading) {
